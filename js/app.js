@@ -23,9 +23,13 @@ var MessageSetting = new Vue({
 	  	this.saveMessageSettings();
   	}
   	this.setDefaultSettings();
+
+     $(document).ready(function(){
+          $('ul.tabs').tabs();
+         
+        });
   }
 });
-
 
 
 
@@ -134,7 +138,6 @@ var SchedulesSetting = new Vue({
   	$('select').material_select();
     this.setInitialScheduels();
   	setInterval(this.timer,5000);
-  //	this.sendMessage();
   }
 });
 
