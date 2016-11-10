@@ -1,0 +1,187 @@
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+     <div class="container" id="main-component">
+
+  <div class="row">
+      <div class="col s12">
+        <ul class="tabs">
+          <li class="tab col s3"><a  class="active" href="#message-setting">Settings</a></li>
+          <li class="tab col s3"><a href="#schedule-setting">Schedules</a></li>
+        </ul>
+      </div>
+      <div id="message-setting" class="col s12">
+
+        <form class="col s12">
+          <div class="row">
+          <div class="row">
+                  <div class="input-field col s6">
+                    <input placeholder="#channel-name"  type="text" v-model="settings.channel" class="validate">
+                    <label for="first_name">Slack Channel</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input id="last_name" type="password" class="validate" v-model="settings.token" >
+                    <label for="last_name">Slack API Token</label>
+                  </div>
+                </div>
+
+            <div class="input-field col s12">
+               <i class="material-icons prefix">mode_edit</i>
+              <textarea id="icon_prefix2" class="materialize-textarea" v-model="settings.message"></textarea>
+              <label for="icon_prefix2">Message</label>
+            </div>
+
+             <div class="input-field col s12">
+               <i class="material-icons prefix">mode_edit</i>
+             <input placeholder="Placeholder" v-model="settings.imageURL" type="text" class="validate">
+              <label for="icon_prefix2">Image URL</label>
+            </div>
+
+          </div>
+
+          <a class="waves-effect waves-light btn" @click="saveMessageSettings"><i class="material-icons left">cloud</i>Save</a>
+    </form>
+
+<div class="col s12 ">
+        <div class="card-panel grey lighten-5 z-depth-1">
+          <div class="row valign-wrapper">
+            <div class="col s3">
+              <img :src="settings.imageURL" alt="" class="responsive-img"> <!-- notice the "circle" class -->
+            </div>
+            <div class="col s9">
+              <h5 class="black-text">
+                {{settings.message}}
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      </div>
+      <div id="schedule-setting" class="col s12">
+      <div class="row">
+        
+              <div class="input-field col  s4">
+                  <select class="icons" v-model="scheduleForm.hour" id="hour">
+                    <option value="" disabled selected>Hour</option>
+                    <option value="01" >01</option>
+                    <option value="02" >02</option>
+                    <option value="03" >03</option>
+                    <option value="04" >04</option>
+                    <option value="05" >05</option>
+                    <option value="06" >06</option>
+                    <option value="07" >07</option>
+                    <option value="08" >08</option>
+                    <option value="09" >09</option>
+                    <option value="10" >10</option>
+                    <option value="11" >11</option>
+                    <option value="12" >12</option>
+                  </select>
+                </div> 
+
+                <div class="input-field col  s4" v-model="scheduleForm.hour" >
+                  <select class="icons" id="minute">
+                    <option value="" disabled selected>Minute</option>
+                      <option value="00" >00</option>
+                      <option value="05" >05</option>
+                      <option value="10" >10</option>
+                      <option value="15" >15</option>
+                      <option value="20" >20</option>
+                      <option value="25" >25</option>
+                      <option value="30" >30</option>
+                      <option value="35" >35</option>
+                      <option value="40" >40</option>
+                      <option value="45" >45</option>
+                      <option value="50" >50</option>
+                      <option value="55" >55</option>
+                  </select>
+                </div>
+
+                <div class="input-field col  s3">
+                 <select class="icons" id="meridium">
+                      <option value="AM" selected="selected">AM</option>
+                      <option value="PM" >PM</option>
+                  </select>
+                </div> 
+                       <div class="input-field col  s1">
+                <a class="btn-floating btn-sm right" @click="showFormdata" ><i class="material-icons">add</i></a>
+                </div>
+
+
+                </div>
+                <!-- .row -->
+               
+
+
+                  <div class="card-panel grey lighten-5 z-depth-1">
+                  <strong> Schedules</strong>
+                      <div class="row valign-wrapper">
+
+
+
+<table>
+        <thead>
+          <tr>
+              <th data-field="id">#</th>
+              <th data-field="Time">Time</th>
+              <th data-field="name">Change Status</th>
+              <th data-field="name">Delete</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr v-for="(schedule, index) in schedules">
+            <td>{{index+1}}</td>
+            <td>{{schedule.hour+ ':'+ schedule.minute + ' '+schedule.meridium}} </td>
+            <td>
+            <a class="btn btn-xs" v-if="!schedule.enabled" @click="changeStatus(index)">Enable</a>
+            
+            <a class="btn btn-xs red" v-if="schedule.enabled" @click="changeStatus(index)">Disable</a>
+            </td>
+            <td>
+            <a class="btn-floating btn-sm red"  @click="deleteSchedule(index)"><i class="material-icons left">delete</i></a>
+            </td>
+          </tr>
+          
+          
+        </tbody>
+      </table>
+      <a class="btn btn-sm red"  @click="sendMessage()"><i class="material-icons left">Send Message</i></a>
+
+                      </div>
+                </div>
+      </div>
+      <!-- .tab2 -->
+    </div>
+    </div>
+    <!-- .container -->
+
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://unpkg.com/vue@2.0.5/dist/vue.min.js"></script>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/app.js"></script>
+      <script type="text/javascript">
+        $(document).ready(function(){
+          $('ul.tabs').tabs();
+         
+        });
+       
+      </script>
+
+    </body>
+  </html>
+        
