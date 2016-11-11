@@ -1,4 +1,4 @@
-# slack-chrome-extension-extension
+# Slack Schedule Message Sending Application
 
 > An application to send schedule message in Slack Messenger, Developed with VueJS
 
@@ -15,4 +15,11 @@ npm run dev
 npm run build
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+# How to
+ 1. In the first tab fill all the information. Here Token field must be filled with your valid Slack API Token. And in the channel field enter any channel name as '#test-channel'.
+
+ 2. On the second tab you have to add your schedule. You can enable or disable each schedule.Message will be sent with according specified schedule. An example schedule has been entered by default.
+
+
+ #Note:
+ You should use latest browser to get suppor of localStorage feature.
