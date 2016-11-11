@@ -14,6 +14,9 @@ npm run dev
 # build for production with minification
 npm run build
 ```
+## Application Screen:
+
+![Message Setting](https://raw.githubusercontent.com/rbrahul/desktop-app-using-electron-react/master/task-manager-using-electron-react.png "Message Settings")
 
 # How to
  1. In the first tab fill all the information. Here Token field must be filled with your valid Slack API Token. And in the channel field enter any channel name as '#test-channel'.
