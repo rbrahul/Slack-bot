@@ -15,15 +15,20 @@ npm run dev
 npm run build
 ```
 ## Application Screen:
-1. Message Setting
+#### Message Setting
 ![Message Setting](https://raw.githubusercontent.com/rbrahul/slack-schedule-messaging/master/static/images/screenshots/message-setting.png "Message Settings")
 
-2. Schedule Setting
+***
+
+####Schedule Setting
 ![Schedule Setting](https://raw.githubusercontent.com/rbrahul/slack-schedule-messaging/master/static/images/screenshots/schedues-setting.png "Schedule Settings")
 
-3. Slack Message Screen
+***
+
+####Slack Message Screen
 ![Slack Message Screen](https://raw.githubusercontent.com/rbrahul/slack-schedule-messaging/master/static/images/screenshots/slack-message.png "Slack Message Screen")
 
+***
 
 ## How to
  1. In the first tab fill all the information. Here Token field must be filled with your valid Slack API Token. And in the channel field enter any channel name as '#test-channel'.
