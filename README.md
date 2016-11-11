@@ -19,7 +19,7 @@ npm run build
 ![Message Setting](https://raw.githubusercontent.com/rbrahul/slack-schedule-messaging/master/static/images/screenshots/message-setting.png "Message Settings")
 
 2. Schedule Setting
-![Schedule Setting](https://raw.githubusercontent.com/rbrahul/slack-schedule-messaging/master/static/images/screenshots/schedules-setting.png "Schedule Settings")
+![Schedule Setting](https://raw.githubusercontent.com/rbrahul/slack-schedule-messaging/master/static/images/screenshots/schedues-setting.png "Schedule Settings")
 
 3. Slack Message Screen
 ![Slack Message Screen](https://raw.githubusercontent.com/rbrahul/slack-schedule-messaging/master/static/images/screenshots/slack-message.png "Slack Message Screen")
