@@ -191,7 +191,6 @@
                     }
 
                 });
-                console.info('timer');
             },
         },
         mounted(){
