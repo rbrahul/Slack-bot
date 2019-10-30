@@ -8,7 +8,7 @@
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
     "prod": "node build/prod-server.js",
-    "start": "npm run prod"
+    "start": "npm run dev"
   },
   "dependencies": {
     "vue": "^2.0.1",
