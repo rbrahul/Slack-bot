@@ -145,7 +145,7 @@
                 const MessageSetting = JSON.parse(localStorage.getItem('slack_settings'));
                 const attachmentMessaage = '[{' +
                         '"image_url": "' + MessageSetting.imageURL + '",' +
-                        ' "title": "Reminder Message!",' +
+                        ' "title": "' + MessageSetting.title + '",' +
                         ' "text": "' + MessageSetting.message + '",' +
                         ' "color": "#7CD197"' +
                         '}]';

@@ -15,6 +15,12 @@
 
                 <div class="input-field col s12">
                     <i class="material-icons prefix">mode_edit</i>
+                    <textarea id="icon_prefix2" class="materialize-textarea" v-model="settings.title"></textarea>
+                    <label for="icon_prefix2">Title</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">mode_edit</i>
                     <textarea id="icon_prefix2" class="materialize-textarea" v-model="settings.message"></textarea>
                     <label for="icon_prefix2">Message</label>
                 </div>
