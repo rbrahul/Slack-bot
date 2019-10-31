@@ -40,6 +40,14 @@
         <div class="col s12 ">
             <div class="card-panel grey lighten-5 z-depth-1">
                 <div class="row valign-wrapper">
+                    <div class="col s9">
+                        <h5 class="black-text2">
+                            <b>
+                               {{settings.title}}
+                            </b>
+                        </h5>
+                    </div>
+                    <br/>
                     <div class="col s3">
                         <img :src="settings.imageURL" alt="" class="responsive-img"> <!-- notice the "circle" class -->
                     </div>
