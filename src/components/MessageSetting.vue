@@ -60,10 +60,11 @@
         data() {
             return {
                 settings: {
-                    message: 'Please don\'t forget about Namaz',
+                    title: 'Reminder',
+                    message: 'test me',
                     channel: '',
                     token: '',
-                    imageURL: 'http://static.thousandwonders.net/Qol%C5%9F%C3%A4rif.Mosque.original.14573.jpg'
+                    imageURL: 'https://static.thousandwonders.net/Qol%C5%9F%C3%A4rif.Mosque.original.14573.jpg'
                 }
             }
         },
