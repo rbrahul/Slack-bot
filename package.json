@@ -7,10 +7,12 @@
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
-    "prod": "node build/prod-server.js",
-    "start": "npm run dev"
+    "prod": "node build/server.js",
+    "start": "npm run prod"
   },
   "dependencies": {
+    "connect": "^3.7.0",
+    "serve-static": "^1.14.1",
     "vue": "^2.0.1",
     "vue-template-compiler": "^2.6.10"
   },
@@ -50,8 +52,7 @@
     "webpack-merge": "^4.2.2"
   },
   "engines": {
-    "node": "v10.15.2",
-    "npm": "6.12.1",
-    "yarn": "1.19.1"
+    "node": "=> v12.13.0",
+    "npm": "=> 6.12.1"
   }
 }
