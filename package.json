@@ -5,8 +5,8 @@
   "author": "rbrahul <rahulbaruri1@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "node build/dev-server.js",
     "build": "node build/build.js",
+    "dev": "node build/dev-server.js",
     "prod": "node build/server.js",
     "start": "npm run prod"
   },
