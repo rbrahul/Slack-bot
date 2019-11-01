@@ -15,6 +15,12 @@
 
                 <div class="input-field col s12">
                     <i class="material-icons prefix">mode_edit</i>
+                    <textarea id="icon_prefix2" class="materialize-textarea" v-model="settings.title"></textarea>
+                    <label for="icon_prefix2">Title</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">mode_edit</i>
                     <textarea id="icon_prefix2" class="materialize-textarea" v-model="settings.message"></textarea>
                     <label for="icon_prefix2">Message</label>
                 </div>
@@ -34,6 +40,14 @@
         <div class="col s12 ">
             <div class="card-panel grey lighten-5 z-depth-1">
                 <div class="row valign-wrapper">
+                    <div class="col s9">
+                        <h5 class="black-text2">
+                            <b>
+                               {{settings.title}}
+                            </b>
+                        </h5>
+                    </div>
+                    <br/>
                     <div class="col s3">
                         <img :src="settings.imageURL" alt="" class="responsive-img"> <!-- notice the "circle" class -->
                     </div>
@@ -54,10 +68,11 @@
         data() {
             return {
                 settings: {
-                    message: 'Please don\'t forget about Namaz',
+                    title: 'Reminder',
+                    message: 'test me',
                     channel: '',
                     token: '',
-                    imageURL: 'http://static.thousandwonders.net/Qol%C5%9F%C3%A4rif.Mosque.original.14573.jpg'
+                    imageURL: 'https://static.thousandwonders.net/Qol%C5%9F%C3%A4rif.Mosque.original.14573.jpg'
                 }
             }
         },
