@@ -217,7 +217,8 @@
                            hours = ["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23"];
                        } else {
                            hours.splice(hours.indexOf("25"), 1);
-                           hours.push((c_min < minute) && (c_sec < 59) ? c_hour : c_hour+1);
+                           // timer is every 5s so 50s is the margin
+                           hours.push((c_min < minute) && (c_sec < 50) ? c_hour : c_hour+1);
                       }
                     }
                     days.splice(days.indexOf(""), 1);
@@ -227,7 +228,8 @@
                        } else {
                            days.splice(days.indexOf("7"), 1);
                            console.log(Math.max(hours)-1);
-                           days.push((c_hour == Math.max(Math.min(hours), 0) && (c_min < minute) && (c_sec < 59)) || (c_hour < Math.max(Math.min(hours), 0)) ? c_day : c_day+1);
+                           // same as previous comment about margin
+                           days.push((c_hour == Math.max(Math.min(hours), 0) && (c_min < minute) && (c_sec < 50)) || (c_hour < Math.max(Math.min(hours), 0)) ? c_day : c_day+1);
                       }
                     }
                     for (i = 0; i < days.length; i++) {
@@ -324,7 +326,7 @@
                 minute = (parseInt(minute) < 10) ? '0' + minute : minute;
                 const time = day + 'wd ' + hour + ':' + minute;
                 this.schedules.forEach((schedule, index) => {
-                    if (schedule.time === time && schedule.sent === false && schedule.enabled === true) {
+                    if (schedule != null && schedule.time === time && schedule.sent === false && schedule.enabled === true) {
                         this.sendMessage(schedule);
                         if (schedule.recurrent == false) {
                            this.schedules[index].sent = true;
